@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot to Clipboard - 螢幕文字擷取工具</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        /* 讓頁面滾動更平滑 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- 將您的 .png 圖示上傳到 GitHub 並替換連結 -->
+                <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/sam_tool_screenshot_text_to_clipboard.png" alt="App Logo" class="h-10 w-10">
+                <h1 class="text-2xl font-bold text-gray-900">Screenshot to Clipboard</h1>
+            </div>
+            <a href="#download" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                下載
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            最直覺的螢幕文字擷取工具
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            輕鬆框選螢幕任何區域，立即辨識文字並複製到剪貼簿。無論是程式碼、報告還是網頁內容，都能一鍵搞定。
+        </p>
+        <div id="download" class="mt-8">
+            <!-- !!! 請將此連結換成您在 GitHub Releases 頁面上的 .zip 檔案連結 !!! -->
+            <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases/latest/download/screenshot_text_to_clipboard_v1.0.zip" 
+               class="bg-indigo-600 text-white font-bold text-xl px-8 py-4 rounded-lg inline-block hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                立即下載 v1.0 for Windows
+            </a>
+            <p class="mt-2 text-sm text-gray-500">免費</p>
+        </div>
+    </main>
+
+    <!-- Screenshot Preview -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold text-gray-900">軟體介面預覽</h3>
+            <div class="mt-8 shadow-2xl rounded-lg overflow-hidden">
+                <!-- 建議您放一張漂亮的軟體截圖，並替換下方的圖片連結 -->
+                <img src="https://placehold.co/1200x600/E0E7FF/4F46E5?text=Your+App+Screenshot+Here" alt="App Screenshot" class="w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">主要功能</h3>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-indigo-500 mb-4">📋</div>
+                    <h4 class="text-xl font-bold mb-2">一鍵複製</h4>
+                    <p class="text-gray-600">辨識結果自動複製到剪貼簿，省去手動操作的麻煩。</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-indigo-500 mb-4">↔️</div>
+                    <h4 class="text-xl font-bold mb-2">保留排版</h4>
+                    <p class="text-gray-600">獨家演算法能保留縮排與對齊。</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-4xl text-indigo-500 mb-4">☕️</div>
+                    <h4 class="text-xl font-bold mb-2">免費</h4>
+                    <p class="text-gray-600">完全免費。如果您喜歡這個工具，歡迎<a href="https://www.paypal.me/YOUR_USERNAME_HERE" class="text-indigo-600 hover:underline">請我喝杯咖啡</a>！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
