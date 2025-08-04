@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screenshot to Clipboard - 螢幕文字擷取工具</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
@@ -26,37 +26,40 @@
                 <img src="sam_tool_screenshot_text_to_clipboard.png" alt="App Logo" class="h-10 w-10">
                 <h1 class="text-2xl font-bold text-gray-900">Screenshot to Clipboard</h1>
             </div>
-            <a href="#download" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
-                下載
-            </a>
+            <div class="flex items-center space-x-4">
+                <a href="#download" class="bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors" data-lang="download">下載</a>
+                <!-- Language Switcher -->
+                <div class="text-sm">
+                    <button onclick="setLanguage('zh')" class="text-gray-600 hover:text-indigo-600 font-semibold">中文</button>
+                    <span class="text-gray-300">/</span>
+                    <button onclick="setLanguage('en')" class="text-gray-600 hover:text-indigo-600 font-semibold">English</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <main class="container mx-auto px-6 py-16 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight" data-lang="hero_title">
             最直覺的螢幕文字擷取工具
         </h2>
-        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-lang="hero_subtitle">
             輕鬆框選螢幕任何區域，立即辨識文字並複製到剪貼簿。無論是程式碼、報告還是網頁內容，都能一鍵搞定。
         </p>
         <div id="download" class="mt-8">
-            <!-- !!! 請將此連結換成您在 GitHub Releases 頁面上的 .zip 檔案連結 !!! -->
             <a href="https://drive.google.com/uc?export=download&id=1iX1DsSEb9dZrQ950ySHxEZWDyKct6zsv" 
-               class="bg-indigo-600 text-white font-bold text-xl px-8 py-4 rounded-lg inline-block hover:bg-indigo-700 transition-transform transform hover:scale-105">
+               class="bg-indigo-600 text-white font-bold text-xl px-8 py-4 rounded-lg inline-block hover:bg-indigo-700 transition-transform transform hover:scale-105" data-lang="download_button">
                 立即下載 v1.0 for Windows
             </a>
-            <p class="mt-2 text-sm text-gray-500">免費</p>
+            <p class="mt-2 text-sm text-gray-500" data-lang="free">免費</p>
         </div>
     </main>
 
     <!-- Screenshot Preview -->
     <section class="bg-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold text-gray-900">軟體介面預覽</h3>
-            <!-- *** UPDATED: 加上 max-w-4xl 和 mx-auto 來限制最大寬度並置中 *** -->
+            <h3 class="text-3xl font-bold text-gray-900" data-lang="preview_title">軟體介面預覽</h3>
             <div class="mt-8 shadow-2xl rounded-lg overflow-hidden max-w-4xl mx-auto">
-                <!-- 建議您放一張漂亮的軟體截圖，並替換下方的圖片連結 -->
                 <img src="sam_tool_screenshot_text_to_clipboard_screenshot.png" alt="App Screenshot" class="w-full">
             </div>
         </div>
@@ -65,22 +68,22 @@
     <!-- Features Section -->
     <section class="py-16">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">主要功能</h3>
+            <h3 class="text-3xl font-bold text-gray-900 text-center mb-12" data-lang="features_title">主要功能</h3>
             <div class="grid md:grid-cols-3 gap-8 text-center">
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <div class="text-4xl text-indigo-500 mb-4">📋</div>
-                    <h4 class="text-xl font-bold mb-2">一鍵複製</h4>
-                    <p class="text-gray-600">辨識結果自動複製到剪貼簿，省去手動操作的麻煩。</p>
+                    <h4 class="text-xl font-bold mb-2" data-lang="feature1_title">一鍵複製</h4>
+                    <p class="text-gray-600" data-lang="feature1_desc">辨識結果自動複製到剪貼簿，省去手動操作的麻煩。</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <div class="text-4xl text-indigo-500 mb-4">↔️</div>
-                    <h4 class="text-xl font-bold mb-2">保留排版</h4>
-                    <p class="text-gray-600">獨家演算法能保留縮排與對齊。</p>
+                    <h4 class="text-xl font-bold mb-2" data-lang="feature2_title">保留排版</h4>
+                    <p class="text-gray-600" data-lang="feature2_desc">獨家演算法能保留縮排與對齊。</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <div class="text-4xl text-indigo-500 mb-4">☕️</div>
-                    <h4 class="text-xl font-bold mb-2">免費</h4>
-                    <p class="text-gray-600">完全免費。如果您喜歡這個工具，歡迎<a href="https://www.paypal.me/foliage246" class="text-indigo-600 hover:underline">請我喝杯咖啡</a>！</p>
+                    <h4 class="text-xl font-bold mb-2" data-lang="feature3_title">免費</h4>
+                    <p class="text-gray-600" data-lang="feature3_desc">完全免費。如果您喜歡這個工具，歡迎<a href="https://www.paypal.me/foliage246" class="text-indigo-600 hover:underline">請我喝杯咖啡</a>！</p>
                 </div>
             </div>
         </div>
@@ -89,9 +92,72 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            <p data-lang="copyright">&copy; 2024 Your Name. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                download: "Download",
+                hero_title: "The Most Intuitive Screen Text Grabber",
+                hero_subtitle: "Easily select any area on your screen, instantly recognize text, and copy it to your clipboard. Handle code, reports, or web content with a single click.",
+                download_button: "Download v1.0 for Windows",
+                free: "Free",
+                preview_title: "App Interface Preview",
+                features_title: "Main Features",
+                feature1_title: "One-Click Copy",
+                feature1_desc: "Recognition results are automatically copied to the clipboard, saving you the hassle of manual operations.",
+                feature2_title: "Preserve Layout",
+                feature2_desc: "The exclusive algorithm preserves indentation and alignment.",
+                feature3_title: "Free",
+                feature3_desc: 'Completely free. If you like this tool, feel free to <a href="https://www.paypal.me/foliage246" class="text-indigo-600 hover:underline">buy me a coffee</a>!',
+                copyright: "© 2024 Your Name. All Rights Reserved."
+            },
+            zh: {
+                download: "下載",
+                hero_title: "最直覺的螢幕文字擷取工具",
+                hero_subtitle: "輕鬆框選螢幕任何區域，立即辨識文字並複製到剪貼簿。無論是程式碼、報告還是網頁內容，都能一鍵搞定。",
+                download_button: "立即下載 v1.0 for Windows",
+                free: "免費",
+                preview_title: "軟體介面預覽",
+                features_title: "主要功能",
+                feature1_title: "一鍵複製",
+                feature1_desc: "辨識結果自動複製到剪貼簿，省去手動操作的麻煩。",
+                feature2_title: "保留排版",
+                feature2_desc: "獨家演算法能保留縮排與對齊。",
+                feature3_title: "免費",
+                feature3_desc: '完全免費。如果您喜歡這個工具，歡迎<a href="https://www.paypal.me/foliage246" class="text-indigo-600 hover:underline">請我喝杯咖啡</a>！',
+                copyright: "© 2024 Your Name. All Rights Reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            // 儲存使用者選擇到 localStorage
+            localStorage.setItem('language', lang);
+            
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
+        }
+
+        // 網頁載入時執行的邏輯
+        document.addEventListener('DOMContentLoaded', () => {
+            // 檢查 localStorage 是否有儲存的語言偏好
+            const savedLang = localStorage.getItem('language');
+            // 偵測瀏覽器語言，並只取前兩個字元 (例如 'en-US' -> 'en')
+            const browserLang = navigator.language.slice(0, 2);
+            
+            // 決定預設語言的優先順序：儲存的偏好 > 瀏覽器語言 > 預設為中文
+            const defaultLang = savedLang || (browserLang === 'en' ? 'en' : 'zh');
+            
+            setLanguage(defaultLang);
+        });
+    </script>
 
 </body>
 </html>
